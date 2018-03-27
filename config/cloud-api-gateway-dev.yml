@@ -1,0 +1,43 @@
+#Hystrix全局超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+ribbon:
+  #请求连接的超时时间
+  ConnectTimeout: 500
+  #请求处理的超时时间
+  ReadTimeout: 1000
+  #对所有操作请求都进行重试
+  OkToRetryOnAllOperations: false
+  #切换实例的重试次数
+  MaxAutoRetriesNextServer: 1
+  #对当前实例的重试次数
+  MaxAutoRetries: 1
+
+
+zuul:
+  #zuul重试机制开关  默认false
+  retryable: true
+  # 需要忽视的服务(配置后将不会被路由)
+#  ignored-services: cloud-base-service-user,cloud-base-service-customer
+  routes:
+    # 可以随便写，在zuul上面唯一即可；当这里的值 = service-id时，service-id可以不写。
+    movie:
+      # 想要映射到的路径
+      path: /movie/**
+      # Eureka中的serviceId
+      service-id: microservice-consumer-movie-ribbon-with-hystrix
+    feign:
+      path: /feign/**
+      service-id: cloud-service-feign
+    user:
+      path: /user/**
+      service-id: cloud-base-service-user
+    customer:
+      path: /customer/**
+      service-id: cloud-base-service-customer
