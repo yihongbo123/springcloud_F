@@ -1,0 +1,38 @@
+server:
+  port: 8055
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/yihongbo123/springcloud_F.git     # 配置git仓库的地址
+#          uri: http://172.17.14.150/fintech/configs.git     # 配置git仓库的地址
+          search-paths: config                           # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: 757430916@qq.com                                             # git仓库的账号
+          password: bobo52464251
+    stream:
+      kafka:
+        binder:
+          zk-nodes: 172.18.44.120:2880,172.18.44.128:2880,172.18.44.123:2880
+          brokers: 172.18.44.120:9092,172.18.44.128:9092,172.18.44.123:9092
+  security:
+    user:
+      name: user
+      password: 123456
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    instance-id: ${spring.application.name}-${eureka.instance.hostname}:${server.port}
+  client:
+    serviceUrl:
+#      defaultZone: http://172.17.14.145:8761/eureka/,http://172.17.14.146:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+## 发送http://host:port/bus/refresh刷新时，关闭安全验证
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["*"]
+
