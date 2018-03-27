@@ -1,0 +1,8 @@
+
+spring:
+  redis:
+    host: 172.18.44.120
+    port: 8379
+    sentinel:
+      master: mymaster
+      nodes: 172.18.44.120:26379,172.18.44.128:26379
