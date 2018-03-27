@@ -14,5 +14,5 @@ spring:
       password: testuser
       driverClassName: com.mysql.jdbc.Driver
 aaa:
-  aaa: 8888
+  aaa: 99999
 
