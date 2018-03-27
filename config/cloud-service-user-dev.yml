@@ -2,14 +2,13 @@ spring:
   redis:
     cluster:
       nodes: 172.18.44.120:6380,172.18.44.128:6380,172.18.44.123:6380,172.18.44.120:6381,172.18.44.128:6381,172.18.44.123:6381
-  master:
-    datasource:
+  datasource:
+    master:
       url: jdbc:postgresql://127.0.0.1:26259/springcloud?sslmode=disable
       username: root
       password:
       driverClassName: org.postgresql.Driver
-  slave:
-    datasource:
+    slave:
       url: jdbc:mysql://172.18.44.120:3306/cloudTest?useUnicode=true&characterEncoding=utf8
       username: testuser
       password: testuser
