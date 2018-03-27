@@ -13,4 +13,6 @@ spring:
       username: testuser
       password: testuser
       driverClassName: com.mysql.jdbc.Driver
+aaa:
+  aaa: 123456
 
