@@ -1,0 +1,19 @@
+spring:
+  #默认0.1，代表收集10%的请求跟踪数据
+  sleuth:
+    sampler:
+      percentage: 1.0
+  cloud:
+    # 开启消息跟踪
+    bus:
+      trace:
+        enabled: true
+
+  datasource:
+    url: jdbc:postgresql://172.18.44.120:26259/gcj?sslmode=disable
+    username: root
+    password:
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+ 
