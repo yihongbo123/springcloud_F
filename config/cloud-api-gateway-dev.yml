@@ -37,7 +37,7 @@ zuul:
       service-id: cloud-service-feign
     user:
       path: /user/**
-      service-id: cloud-service-user
+      service-id: cloud-service-user1
     customer:
       path: /customer/**
       service-id: cloud-base-service-customer
