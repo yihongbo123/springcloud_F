@@ -43,6 +43,12 @@ cloud-service-user:
 
 #Dalston.SR3版本,spring cloud是默认关闭Hystrix的断路器功能
 feign:
+  client:
+    config:
+      default:
+        connectTimeout: 500
+        readTimeout: 5000
+        loggerLevel: basic
   hystrix:
     enabled: true
 
