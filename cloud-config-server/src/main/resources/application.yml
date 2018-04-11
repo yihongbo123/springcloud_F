@@ -15,8 +15,9 @@ spring:
     stream:
       kafka:
         binder:
-          zk-nodes: 172.18.44.120:2880,172.18.44.128:2880,172.18.44.123:2880
           brokers: 172.18.44.120:9092,172.18.44.128:9092,172.18.44.123:9092
+    bus:
+      id: ${eureka.instance.instance-id}
   security:
     user:
       name: user
@@ -35,4 +36,3 @@ management:
     web:
       exposure:
         include: ["*"]
-

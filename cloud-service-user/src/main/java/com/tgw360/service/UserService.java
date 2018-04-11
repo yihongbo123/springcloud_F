@@ -1,7 +1,7 @@
 package com.tgw360.service;
 
 import com.tgw360.entity.User;
-import com.tgw360.mapper.UserMapper;
+import com.tgw360.mapper.master.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.tgw360.mapper;
+package com.tgw360.mapper.master;
 
 import com.tgw360.entity.User;
 
