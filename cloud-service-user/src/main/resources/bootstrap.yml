@@ -1,5 +1,20 @@
 server:
   port: 8888
+test:
+  server:
+#嵌入tomcat配置
+    port: 9001
+    acceptorThreadCount: 200
+    minSpareThreads: 50
+    maxSpareThreads: 50
+    maxThreads: 300
+    maxConnections: 10000
+    connectionTimeout: 10000
+    protocol: org.apache.coyote.http11.Http11Nio2Protocol
+    redirectPort: 443
+    compression: on
+    MaxFileSize: 300MB
+    MaxRequestSize: 500MB
 spring:
   application:
     name: cloud-service-user
@@ -31,7 +46,7 @@ spring:
       trace:
         enabled: true
 
-## 发送http://host:port/bus/refresh刷新时，关闭安全验证
+## 发送http://host:port/actuator/bus-refresh刷新时，关闭安全验证
 management:
   endpoints:
     web:
