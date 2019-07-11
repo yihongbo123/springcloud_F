@@ -75,14 +75,14 @@
         <topic>cloud-logs</topic>
         <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.RoundRobinKeyingStrategy"/>
         <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
-        <producerConfig>bootstrap.servers=172.17.14.145:9092,172.17.14.146:9092,172.17.14.147:9092</producerConfig>
+        <producerConfig>bootstrap.servers=172.18.44.120:9092,172.18.44.81:9092,172.18.44.123:9092</producerConfig>
         <producerConfig>acks=1</producerConfig>
         <producerConfig>linger.ms=100</producerConfig>
     </appender>
     ​
     <root level="INFO">
         <appender-ref ref="console"/>
-        <appender-ref ref="KAFKA"/>
+        <!--<appender-ref ref="KAFKA"/>-->
         <!--<appender-ref ref="logstash"/>-->
         <!--<appender-ref ref="flatfile"/>-->
     </root>

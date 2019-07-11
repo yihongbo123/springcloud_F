@@ -15,9 +15,10 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 172.18.44.120:9092,172.18.44.128:9092,172.18.44.123:9092
+          brokers: 172.18.44.120:9092,172.18.44.81:9092,172.18.44.123:9092
     bus:
       id: ${eureka.instance.instance-id}
+      destination: springCloudBus-2.0
   security:
     user:
       name: user
@@ -29,10 +30,10 @@ eureka:
   client:
     serviceUrl:
 #      defaultZone: http://172.17.14.145:8761/eureka/,http://172.17.14.146:8761/eureka/
-      defaultZone: http://127.0.0.1:8761/eureka/
-## 发送http://host:port/bus/refresh刷新时，关闭安全验证
+      defaultZone: http://172.18.44.120:8761/eureka/
+## http://host:port/actuator/bus-refresh，暴露bus-refresh接口
 management:
   endpoints:
     web:
       exposure:
-        include: ["*"]
+        include: ["bus-refresh"]
